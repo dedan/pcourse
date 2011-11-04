@@ -25,8 +25,10 @@ by calling python on the command-line. Type the name of your file after the
 call to python on the command-line to tell python which file you want to run.
 This is called "to give the filename as an *argument* to python".
 
+```python
     # this line is not printed
     print("hello")
+```
 
 This code shows you two things. That text which starts with a `#` is not
 executed. This is very useful to add text that explains your code (comments).
@@ -120,6 +122,7 @@ variables without talking about the theory of object-orientation:
 
 And again a few examples:
 
+```python
     a_number = 42
     print a_number
     a_float_number = 4.2
@@ -127,6 +130,7 @@ And again a few examples:
     some_text = "this is some text"
     a_list_of_things = [42, "some_text", a_number]
     print(a_list_of_things)
+```
 
 
 read input
@@ -139,12 +143,14 @@ called `raw_input`. This is the name of the function and as I previously
 mentioned, it is *called* or *executed* by writing its name plus parenthesis.
 So to read in some text into a variable:
 
+```python
     variable = raw_input()
     
     # or to ask a question on the commandline
     variable = raw_input("please type a word: ")
     print("you typed: ")
     print(variable)
+```
 
 
 control structures
@@ -164,6 +170,7 @@ make decisions.
 decisions (if)
 -------------
 
+```python
     # the bouncer
     age = 14    # give 14 another name
                 # this also gives a *meaning* to the number and makes it
@@ -172,8 +179,10 @@ decisions (if)
         print "too hard for you"
     else:
         print "ok, come in"
+```
 
-This new piece of code shows a lot of new things again. First a number is
+
+This piece of code shows a lot of new things again. First a number is
 stored in a variable or in the terms I previously used: the number got an
 additional name. Then the most important line `if age < 18:`. After the 
 keyword `if` we always have to provide a python statement that can be either
@@ -186,8 +195,10 @@ the same indentation.
 repetitions (for loop)
 ----------------------
 
+```python
     for variable_name in [1, 8, 12, "test"]:
         print variable_name
+```
 
 *For loops* are very straightforward in python. It reads: For each element in
 the provided list, store the element in the variable with the name
@@ -199,17 +210,20 @@ often something has to be repeated**
 repetitions (while loop)
 ------------------------
 
-
+```python
     # this is a bad example because we already know how often to do smth
     i = 0
     while i < 5:
         print i
         i = i + 1
+```
 
+```python
     # this is much better
     text = ""
     while not text == "the right answer":
         text = raw_input("please give the right answer: ")
+```
 
 The while loop is used when you have to repeat something but you don't know
 how often this has to be done. While the statement that you gave after the
@@ -245,9 +259,9 @@ Homework
 ========
 
 Play with the things you learned here today and please do the following tasks.
-Please first try it without looking at the script. Write what you remember
+First try it without looking at the script. Write what you remember
 and look at the errors. Let them guide you. Only use the script and the
-internet if cannot cannot solve it alone.
+internet if you cannot solve it alone.
 
 1. print the numbers from 1 to 10
   * hint: look up what the function `range` does
