@@ -126,6 +126,24 @@ And again a few examples:
     a_list_of_things = [42, "some_text", a_number]
 
 
+read input
+==========
+
+This is a very simple thing and I will just mention it briefly because we want
+to use it in later examples. As a counter-part to the `print` function that
+appeared previously, there is a function to *read in* information. It is
+called `raw_input`. This is the name of the function and as I previously
+mentioned, it is *called* or *executed* by writing its name plus parenthesis.
+So to read in some text into a variable:
+
+    variable = raw_input()
+    
+    # or to ask a question on the commandline
+    variable = raw_input("please type a word: ")
+    print("you typed: ")
+    print(variable)
+
+
 control structures
 ==================
 
@@ -140,7 +158,7 @@ them be done by computers.
 Having said this, we have to learn how to repeat stuff in python and how to
 make decisions.
 
-decisions (f)
+decisions (if)
 -------------
 
     # the bouncer
@@ -152,12 +170,28 @@ decisions (f)
     else:
         print "ok, come in"
 
+This new piece of code shows a lot of new things again. First a number is
+stored in a variable or in the terms I previously used: the number got an
+additional name. Then the most important line `if age < 18:`. After the 
+keyword if we always have to provide a python statement that can be either
+`True` or `False` and this statement is then terminated by a colon. If the
+statement evaluates to True, the block directly after the colon is executed,
+if not, the else block is executed. A block is any piece of code which has
+the same indentation.
+
 
 repetitions (for loop)
 ----------------------
 
-    for var in [1, 8, 12, "test"]:
-        print var
+    for variable_name in [1, 8, 12, "test"]:
+        print variable_name
+
+*For loops* are very straightforward in python. It reads: For each element in
+the provided list, store the element in the variable with the name
+variable_name and then execute the given block.
+As a rule of thumb: **For loops are always used if you know in advance how
+often something has to be repeated**
+
 
 repetitions (while loop)
 ------------------------
@@ -173,23 +207,14 @@ repetitions (while loop)
     text = ""
     while not text == "the right answer":
         text = raw_input("please give the right answer: ")
-        
-    
-* if
-* read input
+
+The while loop is used when you have to repeat something but you don't know
+how often this has to be done. While the statement that you gave after the
+keyword `while` is true, the following block is executed over and over.
 
 
-play with the things you learned here today
-
-tasks
-
-* print the numbers from 1 to 10
-* print your name 10 times
-* read in a number and give output depending on the number
-
-
-
-things we learn during this lecture:
+things we learned during this lecture
+=====================================
 
 * a function/command gets its parameters in parenthesis
 * text (programmers call it a *string*) that you use in your program code
@@ -211,5 +236,31 @@ hints:
 
 * the *arrow-up* key goes back in the terminal and ipython history so you
   don't have to type in all the things again, if you want to modify a command.
+
+
+Homework
+========
+
+Play with the things you learned here today and please do the following tasks.
+Please first try it without looking at the script. Write what you remember
+and look at the errors. Let them guide you. Only use the script and the
+internet if cannot cannot solve it alone.
+
+1. print the numbers from 1 to 10
+  * hint: look up what the function `range` does
+2. print your name 10 times
+3. read in a number and give output depending on the number
+  * you could e.g. write a variation of the *bouncer program*
+4. read in information and store it in different variables. For example ask on
+   the command-line for someones age, weight and size and then print all this
+   information afterwards as a summary of the type: Your name is: bla and you
+   are x old, etc..
+
+NEVER copy and paste, type everything by yourself! 
+
+Of course later you will use copy and paste and many other tools, but first
+you have to learn your craft by typing typing typing and especially by doing
+mistakes and afterwards fixing them
+
 
 
