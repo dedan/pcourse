@@ -29,9 +29,9 @@ This is called "to give the filename as an *argument* to python".
     print("hello")
 
 This code shows you two things. That text which starts with a `#` is not
-executed. This is very useful to add text that explains your code. In the
-second line we call the `print` function with some text `"hello"` and as
-expected: it prints the text. To call a function we write parenthesis after
+executed. This is very useful to add text that explains your code (comments).
+In the second line we call the `print` function with some text `"hello"` and
+as expected: it prints the text. To call a function we write parenthesis after
 its name. The things we write within the parenthesis are the *arguments*
 that we pass to the function.
 
@@ -65,7 +65,7 @@ even use it as a kind of calculater:
 
 For the one-liner we have previously seen it is tedious to always save it to
 a file. I still want you to write everything in files because the code will
-become much longer already at the end of this lecture. Put for evaluating
+become much longer already at the end of this lecture. But for evaluating
 pieces you are not sure about, you can always paste it there from your editor.
 E.g. you can play with the print function from the very first example:
 
@@ -90,26 +90,28 @@ something and then look what we can learn from the error.
     NameError: name 'hello' is not defined
 
 This leads to an error, but python points us already in the right direction.
-The output tells us that the mistake is in the first line of out file and that
+The output tells us that the mistake is in the first line of the file and that
 we have to deal with a `NameError` because the name `hello` is not defined.
 As always if you don't know what an error means (and they are often hard to
-understand, just google it!). Here it means that python does not know the name
-`hello` and this brings us to variable. Before we wrote "hello" which defines
+understand), just google it!. Here it means that python does not know the name
+`hello` and this brings us to variables. Before we wrote "hello" which defines
 short text with the content *hello*. But without the *""* python thinks a
 variable is meant, but doesn't know one of this name at the moment.
 **A variable just gives a label to an object**. Again abstract, here some code
 
+```python
     # print hello will not work
     var = "hello"
     print var
     var = "a whole sentence"
     print var
+```
 
 All the things we store in these variables are *objects*. This is important
 because Python is an object-oriented programming language. But this should not
 bother you now. We want to keep it intuitive and this is why I just show
-you a few examples of most important things (objects) we can put into
-variables without talking about theory of object-orientation:
+you a few examples of the most important things (objects) we can put into
+variables without talking about the theory of object-orientation:
 
 * text -> strings
 * numbers
@@ -121,9 +123,10 @@ And again a few examples:
     a_number = 42
     print a_number
     a_float_number = 4.2
-    print
+    print(a_number)
     some_text = "this is some text"
     a_list_of_things = [42, "some_text", a_number]
+    print(a_list_of_things)
 
 
 read input
@@ -173,7 +176,7 @@ decisions (if)
 This new piece of code shows a lot of new things again. First a number is
 stored in a variable or in the terms I previously used: the number got an
 additional name. Then the most important line `if age < 18:`. After the 
-keyword if we always have to provide a python statement that can be either
+keyword `if` we always have to provide a python statement that can be either
 `True` or `False` and this statement is then terminated by a colon. If the
 statement evaluates to True, the block directly after the colon is executed,
 if not, the else block is executed. A block is any piece of code which has
@@ -225,7 +228,7 @@ things we learned during this lecture
     * and understandable to others, usually you program in groups
 * with variables you can assign names to things.
 * if `condition`: executes the following block only if `condition` is *true*
-* a `block` is defined by its indentation
+* a `block` is a piece of code with the same indentation
 * use `for .. in` in combinations with blocks to repeat things
 * always use *for loops* if you know how often something has to be repeated
 * use a while loop only if you don't know how often you have to do something
