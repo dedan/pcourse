@@ -12,6 +12,14 @@ is very important. The error messages are sometimes quite cryptic, but then
 just copy and google them. With a very high probability someone had the same
 problem before. A very good programmers forum is [StackOverflow][2].
 
+And please please please, give me feedback. I will always try to improve this
+lecture and for this I depend on your feedback. When programming for a long
+time it is very hard to imagine the things that I did not understand when I
+learned programming. I remember that I found it very confusing and also often
+hard, but after a while you become so familiar to all this cryptic computer
+things that it is hard to imagine the time when you did not understand them.
+Hope the same happens to you in the end ;-)
+
 [1]: http://en.wikipedia.org/wiki/Software_bug "Computer Bug"
 [2]: http://stackoverflow.com/ "Programmer Forum"
 
@@ -152,6 +160,14 @@ So to read in some text into a variable:
     print(variable)
 ```
 
+Another difference between `print` and `raw_input` is that the latter is a
+function with a *return value*. Calling `raw_input` asks you for some input
+that you give it in the terminal. Then it *returns* the input that you gave
+and you can assign it to a variable for using it later. Don't worry, the 
+usage of `raw_input` will definitively become clear during this lecture. And
+if not, never hesitate to ask. During lecture or when reading this script via
+email to `stephan.gabler [ät] gmail.com`.
+
 
 control structures
 ==================
@@ -176,11 +192,14 @@ decisions (if)
                 # this also gives a *meaning* to the number and makes it
                 # more readable
     if age < 18:
-        print "too hard for you"
+        print("too hard for you")
+    elif age < 21:
+        print("hmmm, well.. OK")
+    elif age > 99:
+        print("too old!")
     else:
-        print "ok, come in"
+        print("ok, come in")
 ```
-
 
 This piece of code shows a lot of new things again. First a number is
 stored in a variable or in the terms I previously used: the number got an
@@ -188,8 +207,11 @@ additional name. Then the most important line `if age < 18:`. After the
 keyword `if` we always have to provide a python statement that can be either
 `True` or `False` and this statement is then terminated by a colon. If the
 statement evaluates to True, the block directly after the colon is executed,
-if not, the else block is executed. A block is any piece of code which has
-the same indentation.
+if not, it checks whether the statement after `elif` (else if) evaluates to
+True. If this is the case its block is executed and if not the else block is
+executed. A block is any piece of code which has the same indentation. You
+can write as many `elif` blocks as you want. `elif` and `else` blocks are
+optional.
 
 
 repetitions (for loop)
@@ -197,14 +219,32 @@ repetitions (for loop)
 
 ```python
     for variable_name in [1, 8, 12, "test"]:
-        print variable_name
+        print(variable_name)
 ```
 
 *For loops* are very straightforward in python. It reads: For each element in
 the provided list, store the element in the variable with the name
 variable_name and then execute the given block.
 As a rule of thumb: **For loops are always used if you know in advance how
-often something has to be repeated**
+often something has to be repeated**. To make it more clear what happens, the
+following for loop does the same as:
+
+```python
+    variable_name = 1
+    print(variable_name)
+    variable_name = 8
+    print(variable_name)
+    variable_name = 12
+    print(variable_name)
+    variable_name = "test"
+    print(variable_name)
+
+```
+
+You can immediately see that this would become very tedious to write for
+longer lists and as I set in the beginning: Let computers do the boring stuff
+and don't repeat yourself!
+
 
 
 repetitions (while loop)
@@ -253,6 +293,16 @@ hints:
 
 * the *arrow-up* key goes back in the terminal and ipython history so you
   don't have to type in all the things again, if you want to modify a command.
+* `ipython` has a very useful feature. If you write the name of a function
+  followed by a `?` it will print the documentation of this function. So for 
+  example if you don't remember what the `raw_string` function did exactly
+  then go to you `ipython` window and type `raw_string?`.
+* if you maybe wrote a program that does not end (for example with an
+  infinite while loop like `while 1 == 1:`) you can always *kill* your
+  programs by pressing `Ctrl` and `c` at the same time.
+* if you are not sure about statements you want to use for a if condition you
+  can always chat what the evaluate to in ipython. Try it.
+  `age = 13`, `age < 20` `--> True` 
 
 
 Homework

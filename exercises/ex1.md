@@ -22,6 +22,9 @@ insights on:
 * try to give interesting examples
 * provide more exercises and also feedback on your solutions
 
+Please never hesitate to ask any questions, during the lectures or via email
+to `stephan.gabler [ät] gmail.com`
+
 
 So, let's start:
 ----------------
