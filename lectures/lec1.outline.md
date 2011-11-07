@@ -6,7 +6,9 @@ First Lecture
 * never copy paste -> make mistakes
 * google error messages
 * stackoverflow.com
+* give me feedback. please !!!
 
+Briefly talk again about what terminal, ipython and editor are.
 
 Run a python file
 =================
@@ -28,6 +30,7 @@ Ipython
 * evaluate one liners
 * experiment
 * use it as a calculator
+* mention ? syntax
 
 Variables
 =========
@@ -119,6 +122,19 @@ the provided list, store the element in the variable with the name
 variable_name and then execute the given block.
 As a rule of thumb: **For loops are always used if you know in advance how
 often something has to be repeated**
+
+```python
+    variable_name = 1
+    print(variable_name)
+    variable_name = 8
+    print(variable_name)
+    variable_name = 12
+    print(variable_name)
+    variable_name = "1"test
+    print(variable_name)
+
+```
+
 
 
 repetitions (while loop)
