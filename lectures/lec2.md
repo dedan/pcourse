@@ -1,6 +1,7 @@
 
 
-Last time we learned:
+Last time we learned
+--------------------
 
 * how to print and read
 * how to store something in a variable
@@ -15,12 +16,12 @@ of the basics before we go on, to make it not too confusing. Please always
 let me know if it is going too fast.
 
 
-Short comment on functions with return value
---------------------------------------------
+Short comment on functions with a return value
+----------------------------------------------
 
 As I mentioned in the last lecture, there are some function that just do something (e.g. the print function) and other function that return a value. Actually most of the functions return a value. You already used a few of them, for example `raw_input()`, `range()` and `int()`. Two things to mention. 
 
-1. In any place where you need what a function returned, you can directly write the function. An example to make that more clear. If you need a list of numbers you can use the `range()` function that returns you a list. One option is to store this list in a variable and then use it later (e.g. in a for loop). But you don't have to put it into a variable first. You can just write the function in the place where you need the list. Because its return value is a list, you can actually treat it like a list. See the following code.
+* In any place where you need what a function returned, you can directly write the function. An example to make that more clear. If you need a list of numbers you can use the `range()` function that returns you a list. One option is to store this list in a variable and then use it later (e.g. in a `for loop`). But you don't have to put it into a variable first. You can just write the function in the place where you need the list. Because its return value is a list, you can actually treat it like a list. See the following code.
 
 ```python
     list_of_numbers = range(10)
@@ -33,7 +34,7 @@ As I mentioned in the last lecture, there are some function that just do somethi
         print(number)
 ```
 
-2. Because of the first point, functions can be *chained*. You don't have to store the return value anywhere, you can just pass it to the next function.
+* Because of the first point, functions can be *chained*. You don't have to store the return value anywhere, you can just pass it to the next function.
 
 ```python
     # old style code
@@ -57,7 +58,7 @@ More on for loops
 -----------------
 
 Last time I showed you how to iterate over a list. Iteration over something
-is such a basic concept in python that I would like to talk about this a little bit more. The `for variable_name in something` syntax might confuse you in the beginning so I will try to explain it again. It means to one after another take each element from the *something*, then call it variable_name and execute the block. It is called by a name (variable_name) so that you can refer to it into the block. Maybe it becomes more clear if we rename the variables in a way that it sounds more intuitive. If we just use the right words it already sounds like a natural description in a task. The task could be to do something *for all elements in a list*, *for all letters in a word* or for *all lines in a file*. This sounds like natural language, right? Now let's have a look how this is done in python.
+is such a basic concept in python that I would like to talk about this a little bit more. The `for variable_name in something` syntax might confuse you in the beginning so I will try to explain it again. It means to one after another take each *element* from the *something*, then call it variable_name and execute the block. It is called by a name (variable_name) so that you can refer to it within the block. Maybe it becomes more clear if we rename the variables in a way that it sounds more intuitive. If we just use the right words it already sounds like a natural description of a task. The task could be to do something *for all elements in a list*, *for all letters in a word* or for *all lines in a file*. This sounds like natural language, right? Now let's have a look how this is done in python.
 
 What I did not tell you last time, is that we cannot only use lists in a for loop. In python a for loop is much more general and can be applied to everything that is *iterable*. I will not show you how to create new iterables (this is quite advanced), but give you a few examples of them and then it will become clear that we can use them without knowing anything about them.
 
@@ -69,7 +70,7 @@ As always, type the code I present here into an editor (Yes, type!) and let it r
         print(letter)
 ```
 
-This first example shows that also a string is an iterable. We can *iterate* over it and it gives us all the elements it consists of, one at a time. And you see, if you assign reasonable names to your variables, it almost sounds like the natural language phrases I mentioned before (for all letters in a name). 
+This first example shows that also a string is an iterable. We can *iterate* over it and it gives us all the elements it consists of, one at a time. And you see, if you assign reasonable names to your variables, it almost sounds like the natural language phrases I mentioned before (*for all letters in a name*). 
 
 
 ```python
@@ -88,7 +89,7 @@ This first example shows that also a string is an iterable. We can *iterate* ove
 
 The second example asks you for two strings. A name and your favorite letter. Then it again iterates over a string. But this time it does not simply print each letter. Each letter is compared with the *favorite letter* and its occurrences are counted. At the end the total number of occurrences is printed.
 
-One important comment on the line where the counter is increased. Beginners often tend to write `counter + 1` instead of `counter = counter + 1`. Why is that wrong? It is not really wrong, it just does not do what you want. If you write `counter + 1` it computes the sum of the previous value and the new value. But then, it throws it away. In order to *remember* it we have to store it in a variable. And because we want to use the value again in the next iteration, we just store it back in the old variable. Therefore -> `counter = counter + 1`.
+One important comment on the line where the counter is increased. Beginners often tend to write `counter + 1` instead of `counter = counter + 1`. Why is that wrong? It is not really wrong, it just does not do what you want! If you write `counter + 1` it computes the sum of the previous value and the new value. But then, it throws it away. In order to *remember* it we have to store it in a variable. And because we want to use the value again in the next iteration, we just store it back in the old variable. Therefore -> `counter = counter + 1`.
 
 
 ```python
@@ -161,7 +162,7 @@ As seen in the previous example, single elements of lists or strings can be acce
     w
 
 
-The square bracket notation can be used to access elements of a list. This is also what was done in the previous example when we checked each line of a text file whether it starts with the comment symbol. Especially note the last line of the ipython session. This shows that the notation can also be chained analogously to functions. The return value does not have to be stored in a variable. If the thing that we took from a list supports the bracket notation again (e.g. for a string) we can directly write the next brackets.
+The square bracket notation can be used to access elements of a list. This is also what was done in the previous example when we checked each line of a text file whether it starts with the comment symbol. Especially note the last line of the ipython session. This shows that the notation can also be chained analogously to functions. The return value does not have to be stored in a variable. If the thing that we took from a list supports the bracket notation again (e.g. a string) we can directly write the next brackets.
 
 The bracket notation cannot only be used to access elements of a list but also to change elements. !!! **this does not work with strings** !!! they are immutable. Note that in ipython print is not needed to see the content of a variable.
 
@@ -236,13 +237,13 @@ A few examples in the following code listing:
 Homework
 --------
 
-from this lecture on I ask you to keep a list of things that you already 
+From this lecture on I ask you to keep a list of things that you already 
 learned. Please write down all the terms and symbols that you learned, together with a short explanation of what it does or means. The one of last week could start with:
 
-print: Print text on the terminal (print("text to print"))
-"": wrap this symbols around text to make it a string ("text")
-variable: you can store a value in a variable, name a value
-...
+* `print`: Print text on the terminal (print("text to print"))
+* `""`: wrap this symbols around text to make it a string ("text")
+* `variable`: you can store a value in a variable, name a value
+* ...
 
 
 1. Download the following [short python program][1] and follow the task
@@ -263,16 +264,8 @@ variable: you can store a value in a variable, name a value
     1. Use the bracket notation to access single elements of a list
     2. use the new printing methods
     3. this task should be done in two additional lines of code
-
-
-# remember last exercise where you had to read in values to store them in
-# variables. Do this again but now print them all in a single print command
-# using the string formatting
-
-# play around with strings, what happens if you apply plus or times on a string
-
-operators behave differently for different functions try out multiplication
-and addition of strings in ipython `print("-" * 50)` print("hallo" + " stephan")
+6. play around with strings, what happens if you apply plus or times on a string
+    1. operators behave differently for different functions try out multiplication and addition of strings in ipython `print("-" * 50)` print("hallo" + " stephan")
 
 
 hints:
