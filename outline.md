@@ -1,5 +1,8 @@
 
 
+Remark on the script
+--------------------
+
 In the lectures folder I provide text that can be seen as a script to the
 lecture. But it is not complete. I will go along this script during the 
 lecture, but it cannot be seen as a complete reference. It contains examples
@@ -12,71 +15,54 @@ Type `python for loop` in google. Forgot how to do string formatting in
 python? Type `python string formatting` in google. 
 
 
-Before we even start
---------------------
-
-Do the exercise 1
+lec0: Before we really start
+----------------------------
 
 * read intro from learn python the hard way
     * on motivation and best practice
     * on setup up a environment
 * install ipython
 
-lec 1
------
 
-* use python in interactive mode to experiment
-    * show autocomplete
-    * dir command on objects
-* as written in the book
-    1. Write exercises using gedit.
-    2. Run the exercises you wrote.
-    3. Fix them when they are broken.
-    4. Repeat. Repeat Repeat
+lec 1: very basics
+------------------
 
-**all the code I show them is not pre-written. I type it while they are watching**
-
-* run your first python program, the *hello world* example
+* variables
+* read input
+* control structures
+    * decisions (`if`)
+    * repetitions (`for`, `while`)
 
 
-lecture 2
----------
+lec 2: basics again
+-------------------
 
+* comment on return values
+* more on loops (iterators)
+* random access to list elements
 * string formatting
 
 
 
+options for next classes
+------------------------
 
-to be covered
--------------
+I also need examples of all this stuff. The course should always show why
+something new is cool and useful.
 
-dictionary
-lambda
-list comprehension
-files
-important modules
-    math, datetime, time, re, glob, os, os.path, shutil, json, random
-more exercises with truth values
-berghain bouncer with random module
-a bit more on lists (slicing)
+Show a nice example of how to do a lot with little code in each lecture
 
-weil ich auf nem relativ abstrakten level anfangen will um den leuten coole sachen zu zeigen, füre ich heute schon ein wie man module importiert
-
-
-wie kann ich jetzt weiter machen?
-
-* ein paar coole oder praktische beispiele zeigen
-* ein paar neue sachen einführen mit denen sie dann was cooles machen können
-
-* variable unpacking (wichtig für enumerate)
+* more on files (reading and writing)
+* dictionaries (data structures)
+* list slicing
 * list comprehensions
-    * dafür müssten sie vielleicht aber erst mal wissen für was listen gut sind
-* read and write files
+* important modules
+    * math, datetime, time, re, glob, os, os.path, shutil, json, random
+    * berghain bouncer with random module
+* more exercises with truth values
+* variable unpacking (wichtig für enumerate)
+
+
 
 ich könnte anfangen eine einfache todo anwendung zu schreiben, dafür braucht man aber file operationen für die serialisierung
-
-vielleicht auch aufteilen in einen teil theorie z.b. listen und dicts und im
-rest ne coole anwendung
-
-oder erst mal was machen, dass sich das in der letzten vorlesung gelernte setzt?
 
