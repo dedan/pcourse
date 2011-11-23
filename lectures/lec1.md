@@ -175,6 +175,24 @@ usage of `raw_input` will definitively become clear during this lecture. And
 if not, never hesitate to ask. During lecture or when reading this script via
 email to `stephan.gabler [ät] gmail.com`.
 
+**important note!**  
+When you want to read in a number instead of a name, you have to use:
+
+```python
+    variable = int(raw_input())
+```
+
+instead of:
+
+```python
+    variable = raw_input()
+```
+
+So for example when you want to ask someone for his age, and then continue in
+your program depending on the number (for his age) that he entered, you have
+to use the `int(raw_input())`. A application for this will become clear in the
+chapter on `if` and you will also need this for your homework
+
 
 control structures
 ==================
