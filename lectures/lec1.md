@@ -89,9 +89,13 @@ E.g. you can play with the print function from the very first example:
 Variables
 =========
 
-Let me introduce the concept of a variable by playing around with the previous
-example. As I said before we can always learn a lot from errors. To lets try
-something and then look what we can learn from the error.
+Let me introduce the concept of a variable by playing around with the first
+example in which I printed the single word *hello*. As I said before we can
+always learn a lot from errors. So lets try something and then look what we
+can learn from the error. I remove the quotation marks from the word hello and
+run the code again. To make it clear: I create a file (named *scratch.py* in
+my case) containing the single line `print(hello)` and run it with the command
+`python scratch.py`.
 
     (course)dedan@neuroinf37:~/projects/pcourse: python scratch.py 
     Traceback (most recent call last):
@@ -110,11 +114,11 @@ variable is meant, but doesn't know one of this name at the moment.
 **A variable just gives a label to an object**. Again abstract, here some code
 
 ```python
-    # print hello will not work
+    # store the string "hello" in a variable
     var = "hello"
-    print var
+    print(var)
     var = "a whole sentence"
-    print var
+    print(var)
 ```
 
 All the things we store in these variables are *objects*. This is important
@@ -140,6 +144,9 @@ And again a few examples:
     print(a_list_of_things)
 ```
 
+It is a convention that the names of variables only contain small letters. You
+can also use numbers in variable names, but they always have to begin with a
+letter!
 
 read input
 ==========
@@ -254,7 +261,7 @@ repetitions (while loop)
     # this is a bad example because we already know how often to do smth
     i = 0
     while i < 5:
-        print i
+        print(i)
         i = i + 1
 ```
 
@@ -313,7 +320,15 @@ First try it without looking at the script. Write what you remember
 and look at the errors. Let them guide you. Only use the script and the
 internet if you cannot solve it alone.
 
-1. print the numbers from 1 to 10
+For each homework I will give you at the end of a lecture, please create a new
+folder on your hard-disk and call it `ex` plus the number of the lecture. So
+`ex1` for this lecture. In this folder create a file for each of the tasks.
+Either a file ending with `.py` for programs or with `.txt` if you have to
+write an explanation. Please name them according to exercise and task number,
+e.g. `ex1_1.py` for the first task of this first exercise.
+
+1. print the numbers from 1 to 10 below each other. Don't just print a list
+   containing those numbers.
   * hint: look up what the function `range` does
 2. print your name 10 times
 3. read in a number and give output depending on the number
@@ -323,7 +338,11 @@ internet if you cannot solve it alone.
    information afterwards as a summary of the type: Your name is: bla and you
    are x old, etc..
 
-NEVER copy and paste, type everything by yourself! 
+NEVER copy and paste, type everything by yourself!
+
+Again: Read the error message carefully. It often gives you very good hints
+of where to find the error! It always tells you at least the line where the
+error occurred.
 
 Of course later you will use copy and paste and many other tools, but first
 you have to learn your craft by typing typing typing and especially by doing
