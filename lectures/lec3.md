@@ -83,24 +83,108 @@ This is something you would learn very late in another course. But I want to sho
 
 I'll explain this idea of python modules further on the example of the `random` module.
 
+```python
+    
+    # this is how you import a module - write import, followed by the
+    # name of the module you want to use
+    import random
 
 
+    # lets say you want to choose a random element from a list
+    students = ['julia', 'leo', 'tara']
+    print(random.choice(students))
 
 
-split and join
+    # get a random number in a certain range
+    print(random.randint(1, 6))
 
-throw dice with the random module
+
+    # let each student throw the dice N times
+    N = 3
+    for student in students:
+        print("%s is throwing the dice" % student)
+
+        value = 0
+        for game_round in range(N):
+
+            print("for the %d time in this exciting game" % (game_round + 1))
+            dice_points = random.randint(1, 6)
+
+            # add yeah if value > 4
+            print("the result is %d" % dice_points)
+            value = value + dice_points
+        out_string = "\t%s made %d points in %d rounds of the game"
+        print(out_string % (student, value, N))
 
 
-show wechstaben example
+    # do something with a certain probability
+    random_value = random.random()
+    print(random_value)
+    if random_value > 0.5:
+        print("yeah")
+```
+
+
+Two useful String operations
+----------------------------
+
+This is nothing special and does not really fit into a category. But it is some useful functionality that comes with strings and you'll need it to understand my next example
+
+# how to split a sentece into single words
+sentence = "this is a sentence"
+sentence1 = "this, is, one, with many, commas"
+
+# split at all white-spaces (standard)
+splitted = sentence.split()
+print(splitted)
+
+# split at another separator
+splitted1 = sentence1.split(',')
+print(splitted1)
+
+# and how to join it again (join a list into a string)
+print("! ".join(splitted))
+print("- ".join(splitted1))
+
+
+Advanced example
+----------------
+
+I decided to end each lecture with an advanced example that helps you to stay motivated. It should always be a example of how to achieve something really cool with only a few lines of code. They are a bit advanced and I don't expect you yet to be able to write something like this on your own (otherwise I would have given it as a homework). But you should have already all knowledge to understand the program completely and maybe you even want to modify it for extra-credits.
+
+```python
+    import random
+
+    # the list in which we collect the output
+    tmp_list = []
+    
+    # read in the whole file, split it into words and iterate over them
+    for word in open('example.txt').read().split():
+    
+        # extract all but the first and the last letter
+        center_as_list = list(word[1:-1])
+        
+        # suffle the center of the word
+        random.shuffle(center_as_list)
+        
+        # put the string together and add it to results list
+        tmp_list.append(word[0] + "".join(center_as_list) + word[-1])
+
+    print(" ".join(tmp_list) + '\n')    
+```
 
 
 Unix, Terminal
 --------------
 
+Important for all real programmers and geeks is to solely use your computer via the command-line and this is why I always give you a few hints on how to use it more efficient. I realized that the usage of the `.` and `..` folders is a bit confusing in the beginning. These symbols are simply shortcuts to certain locations in you file-system.
+
 * `.` is the folder you are in at the moment
 * `..` is the parent folder
 
+Here a small example:
+
+```
     dedan@client195-176:~: cd projects/pcourse/
     dedan@client195-176:~/projects/pcourse: cd ..
     dedan@client195-176:~/projects: cd ..
@@ -128,18 +212,45 @@ Unix, Terminal
         surprise_experiment
         tests
         unateazy
+```
 
-hints
+
+Introduction to the os module
+-----------------------------
+
+This is a very powerful module that gives you a lot of functionality. I will show you first some useful functions which are related to the UNIX stuff I just explained. As always, if you want to know more about a module, google it or use the question mark operator in ipython. The os module is called os because it provides you the same commands as your Operating System. For example you can list folders and files as with the `ls` command.
+
+```python
+    import os
+
+    another_path = '/Users/dedan/Desktop'
+    print(os.listdir("."))
+    print(os.listdir(".."))
+
+    file_list = os.listdir(another_path)
+    for fname in file_list:
+        print fname
+```
+
+
+Hints
 -----
 
-* remember how to learn more about something in ipython?
-    * something?
+* Do you remember how to learn more about python objects and functions? Open ipython and type the name of the thing you want to know more about, followed by a question mark. This is also very useful in combination with modules. Try `random?` in ipython!
 
 
-homework
+Homework
 --------
 
-* slicing
-
-* read in a name and check whether it is a *anagram*
-* count the 
+1. Read in a name and check whether it is an *anagram*
+    * the comparison can be done in one line!
+2. The output of the *dice-throwing-program* is quite ugly when it says sentences like: "for the 1 time in this exciting game". Change the code in a way that it says *1 st*, *2 nd*, *3 rd* and *n th* for all n > 3.
+    * you could first create a string containing the postfix with `if` and `elif` and then add it to the output via the new string formatting.
+3. Implement the berghain bouncer
+    * Write a similar program to the bouncer program from the first lecture
+    * let him ask more questions
+    * program a small conversation
+    * let him (no matter what you say) reject you with a 40 % probability.
+4. Use the os module to write a program which asks you for a path (something like: `/Users/julia/Desktop`) on the command-line and then counts the number of '.jpg' files it finds in this folder
+    * use the os module to get a list of files for a certain path
+    * use slicing to compare the ending of a filename
